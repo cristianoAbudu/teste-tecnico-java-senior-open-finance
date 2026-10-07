@@ -1,0 +1,11 @@
+services:
+  open-finance-api:
+    build: ./open-finance-api
+    ports:
+      - "8081:8081"
+  open-finance-client:
+    build: ./open-finance-client
+    ports:
+      - "8080:8080"
+    depends_on:
+      - open-finance-api
